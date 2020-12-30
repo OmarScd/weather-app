@@ -9,8 +9,8 @@ const forecast = (latitude, longitude, cb) => {
     if (body.error) 
       return cb('Unable to get forecast for that location.', undefined);
 
-    const { temperature, feelslike, weather_descriptions } = body.current;
-    cb(undefined, `${weather_descriptions[0]}. It is ${temperature}°C out. It feels like ${feelslike}°C.`);
+    const { temperature, feelslike, weather_descriptions, humidity } = body.current;
+    cb(undefined, `${weather_descriptions[0]}. It is ${temperature}°C out. It feels like ${feelslike}°C. The humidity is ${humidity}%.`);
   });
 };
 
